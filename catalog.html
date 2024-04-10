@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Anime Catalog</title>
+    <meta name="description" content="A Catalog of Popular Animes">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon"> -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <div id = "loading-screen"></div> -->
+
+    <nav class="navbar" id="header">
+        <div class="navbar__container">
+            <a href="/Anime-Catalog/index.html#" id="navbar__logo"><img src="images/totoro-nav-icon.png" width="65"/>Anime</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu" id="nav-menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links active-link">HOME</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="catalog.html" class="navbar__links">CATALOG</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="operations-container">
+        <div class="search-bar">
+            <!-- Search input field --> 
+            <input type="text" id="search-bar" placeholder="Search">  
+        </div>
+        <div class="sort-container">
+            <button id="sort-button">Sort</button>
+            <div class="dropdown-content" id="dropdown-content">
+                <a href="#" id="lowest-episodes">Lowest Episodes to Highest</a>
+                <a href="#" id="highest-episodes">Highest Episodes to Lowest</a>
+                <a href="#" id="alphabetical">Alphabetical (A to Z)</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="catalog">
+        <div class="card" style="display: none;">
+                <img src="" alt="Anime Poster">
+                <h2>Anime Title</h2>
+                <p class="genre"></p>
+                <p class="episodes"></p>
+                <p class="description"></p>
+            </div>
+        </div>
+    </section>
+
+    <div id="card-container"></div>
+
+    <div class="footer">
+        Anime Catalog by Tiffanie Lim
+    </div>
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+
+</html>

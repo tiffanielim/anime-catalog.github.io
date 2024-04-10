@@ -2,38 +2,116 @@
 <html>
 
 <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles">
+    <title>Animes | Home</title>
+    <meta name="description" content="A Catalog of Popular Animes">
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
 </head>
 
 <body>
-    <header class="main-header">
-        <h1 class="title">LA TV Shows</h1>
-    </header>
-    <div id="card-container">
-        
-    </div>
-    <div class="card" style="display: none;">
-        <div class="card-content">
-            <h2>TV Show Title</h2>
-            <img src="" alt="TV Show Poster">
-            <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
+    <div id = "loading-screen"></div>
+
+    <nav class="navbar" id="header">
+        <div class="navbar__container">
+            <a href="/Anime-Catalog/index.html#" id="navbar__logo"><img src="images/totoro-nav-icon.png" width="65"/>Anime</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu" id="nav-menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links active-link">HOME</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="catalog.html" class="navbar__links">CATALOG</a>
+                </li>
             </ul>
         </div>
+    </nav>
+
+    <!-- <header class="main-header">
+        <h1 class="title">Popular Animes</h1>
+    </header> -->
+
+    <section id="home">
+        <div class="recommended-wrapper">
+            <div class="recommended-container">
+                <input type="radio" name="slide" id="c1" checked>
+                <label for="c1" class="recommended-card">
+                    <div class="recommended-row">
+                        <div class="recommended-icon">1</div>
+                        <div class="recommended-description">
+                            <h4>Attack on Titan</h4>
+                            <p>Genre: Shounen, Dark fantasy</p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c2" >
+                <label for="c2" class="recommended-card">
+                    <div class="recommended-row">
+                        <div class="recommended-icon">2</div>
+                        <div class="recommended-description">
+                            <h4>Fairy Tail</h4>
+                            <p>Genre: Adventure, Fantasy</p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c3" >
+                <label for="c3" class="recommended-card">
+                    <div class="recommended-row">
+                        <div class="recommended-icon">3</div>
+                        <div class="recommended-description">
+                            <h4>Your Lie in April</h4>
+                            <p>Genre: Shojo, Romance</p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c4" >
+                <label for="c4" class="recommended-card">
+                    <div class="recommended-row">
+                        <div class="recommended-icon">4</div>
+                        <div class="recommended-description">
+                            <h4>Jujutsu Kaisen</h4>
+                            <p>Genre: Shounen, Dark fantasy</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <div class="operations-container">
+        <div class="search-bar">
+            <!-- Search input field --> 
+            <input type="text" id="search-bar" placeholder="Search">  
+        </div>
+        <div class="sort-container">
+            <button id="sort-button">Sort</button>
+            <div class="dropdown-content" id="dropdown-content">
+                <a href="#" id="lowest-episodes">Lowest Episodes to Highest</a>
+                <a href="#" id="highest-episodes">Highest Episodes to Lowest</a>
+                <a href="#" id="alphabetical">Alphabetical (A to Z)</a>
+            </div>
+        </div>
     </div>
+
+    <section id="catalog">
+        <div class="card" style="display: none;">
+                <img src="" alt="Anime Poster">
+                <h2>Anime Title</h2>
+                <p class="genre"></p>
+                <p class="episodes"></p>
+                <p class="description"></p>
+            </div>
+        </div>
+    </section>
+
+    <div id="card-container"></div>
+
     <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Quote!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove A Card!
-        </button>
+        Anime Catalog by Tiffanie Lim
     </div>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>
 
 </html>

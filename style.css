@@ -1,3 +1,12 @@
+/* ============================ GENERAL ============================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Futura, Helvetica, sans-serif;
+}
+
 html,
 body {
     margin: 0;
@@ -5,30 +14,228 @@ body {
 }
 
 .main-header {
-    background-color: rgba(0, 0, 0, .3);
+    background-color:#0c3cab;
     padding-bottom: 10px;
 }
+
+button {
+    text-align: center;
+    background-color: #addef0;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.home > p {
+    color: white;
+    background: rgba(88, 88, 89, 0.673);
+}
+
+/* ============================ NAVIGATION BAR ============================ */
+
+.navbar {
+    background-color: #addef0;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 50px;
+}
+
+#navbar__logo {
+    background-color: #addef0;
+    background-image: linear-gradient(to top, #010408
+    0%, #3984c1 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: heavy;
+    font-size: 2rem;
+}
+
+.fa-gen {
+    margin-right: 0.5rem;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item {
+    height: 80px;
+}
+
+.navbar__links {
+    color: #094575;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navbar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.button:hover {
+    background: #090b8c;
+    transition: all 0.3s ease;
+}
+
+.navbar__links:hover {
+    color: #090b8c;
+    transition: all 0.3s ease;
+}
+
+/* ============================ RESPONSIVE NAVIGATION BAR ASPECTS ============================ */
+
+@media screen and (max-width: 768px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background: #0788b5;
+    }
+
+    .navbar__menu.active {
+        background:#d7f3fd;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo {
+        padding-left: 15px;
+    }
+
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #034d8e;
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__btn {
+        padding-bottom: 2rem;
+    }
+
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* ============================ CATALOG ============================ */
 
 .title {
     text-align: center;
     margin: 0;
     font-size: 8em;
-    font-family: "Helvetica";
-    font-weight: normal;
+    font-family: "Georgia";
+    font-weight: bold;
     color: white;
 }
 
 #card-container {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 20px;
+
 }
 
 .card {
     width: 300px;
-    border: 1px solid #ccc;
+    border: 1px;
+    /* border: 1px solid #ccc; */
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     margin: 5px;
 }
 
@@ -48,23 +255,201 @@ body {
     height: auto;
 }
 
+/* ============================ FOOTER ============================ */
+
+
 .footer {
     display: flex;
     justify-content: center;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: #addef0;
     padding: 10px;
 }
 
-button {
-    text-align: center;
-    background-color: #666;
+
+/* ============================ FEATURES ============================ */
+
+/* Basic styling for the search bar */
+.search-bar {
+    position: relative;
+    width: 300px; /* Adjust width as needed */
+  }
+  
+  /* Input field styling */
+  .search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  /* Button styling */
+  .search-bar button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 15px;
+    background-color: #007bff; /* Change button color as desired */
     border: none;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 40px;
-    border-radius: 10px;
-    color: white;
-    font-size: 22px;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
     cursor: pointer;
-    margin: 5px;
+    font-size: 16px;
+  }
+  
+  /* Hover effect for the button */
+  .search-bar button:hover {
+    background-color: #0056b3; /* Change hover color as desired */
+  }
+  
+
+.sort-container{
+    margin-left: 10px;
+    /* display: inline-block; */
+    position: relative;
+    margin-top: 20px;
+    margin-right: 20px;
+    float: right;
 }
+
+#loading-screen {
+    background: #0c3e6b url(https://64.media.tumblr.com/tumblr_m8rwabWSdB1r621gdo1_r1_500.gif) no-repeat center center;
+    background-size: 50%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+/* ============================ DROPDOWN ============================ */
+
+/* dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    /* position: absolute; */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0;
+    top: 100%;
+}
+
+/* dropdown links */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* show the dropdown menu on hover */
+.sort-container:hover .dropdown-content {
+    display: block;
+}
+
+/* ============================ HOMEPAGE RECOMMENDED ANIME SLIDESHOW ============================ */
+
+.recommended-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recommended-container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.recommended-card {
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+}
+
+.recommended-card > .recommended-row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.recommended-card > .recommended-row > .recommended-icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.recommended-card > .recommended-row > .recommended-description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+.recommended-description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+}
+
+.recommended-description h4 {
+    text-transform: uppercase;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: 600px;
+}
+
+input:checked + label .recommended-description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.recommended-card[for="c1"] {
+    background-image: url('images/attack-on-titan-poster.jpeg');
+}
+
+.recommended-card[for="c2"] {
+    background-image: url('images/fairy-tail-poster.webp');
+}
+
+.recommended-card[for="c3"] {
+    background-image: url('images/your-lie-in-april-poster.webp');
+}
+
+.recommended-card[for="c4"] {
+    background-image: url('images/jujutsu-kaisen-poster.webp');
+}
+
